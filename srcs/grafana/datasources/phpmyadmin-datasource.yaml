@@ -1,0 +1,10 @@
+apiVersion: 1
+
+datasources:
+  - name: phpmyadmin-telegraf
+    type: influxdb
+    access: proxy
+    database: phpmyadmin
+    url: http://influxdb:8086
+    jsonData:
+      timeInterval: "10s"

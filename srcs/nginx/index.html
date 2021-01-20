@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NGINX Container</title>
+<style>
+.center {
+  text-align: center;
+}
+p.firstp {
+    color: green;
+    font-weight: bold;
+}
+
+.card-img-top {
+  max-width: 100px;
+  max-height: 100px;
+  margin: auto;
+  padding: 10px;
+}
+.card{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="center">
+    <h1>This is an nginx server</h1>
+    <p class="firstp">The server is on line.</p>
+</div>
+<div class="row center">
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="data:image/png;base64,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" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Nginx</h5>
+        <p class="card-text">...</p>
+        <a href="http://192.168.99.100" class="btn btn-primary">Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://pbs.twimg.com/profile_images/1255113654049128448/J5Yt92WW.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">MySQL</h5>
+        <p class="card-text">...</p>
+        <a href="#" class="btn btn-danger">You can't Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/WordPress_blue_logo.svg/300px-WordPress_blue_logo.svg.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Wordpress</h5>
+        <p class="card-text">...</p>
+        <a href="http://192.168.99.100/wordpress" class="btn btn-primary">Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://pics.computerbase.de/3/8/2/9/7/logo-256.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">PhpMyAdmin</h5>
+        <p class="card-text">...</p>
+        <a href="http://192.168.99.100/phpmyadmin" class="btn btn-primary">Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://dashboard.snapcraft.io/site_media/appmedia/2020/07/influxdata-logo--symbol--pool-alpha-small.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">InfluxDB</h5>
+        <p class="card-text">...</p>
+        <a href="#" class="btn btn-danger">You can't Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a1/Grafana_logo.svg/1200px-Grafana_logo.svg.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Grafana</h5>
+        <p class="card-text">...</p>
+        <a href="http://192.168.99.100:3000" class="btn btn-primary">Click me</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <img src="https://webhostinggeeks.com/howto/wp-content/uploads/2012/02/vsftpd.png" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">FTPS</h5>
+        <p class="card-text">...</p>
+        <a href="#" class="btn btn-danger">You can't Click me</a>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Service</th>
+      <th scope="col">IP</th>
+      <th scope="col">ports</th>
+      <th scope="col">Components</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Nginx</th>
+      <td>LoadBalancer</td>
+      <td>80, 443, 22</td>
+      <td>nginx, sshd, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">MySQL</th>
+      <td>ClusterIP</td>
+      <td>3306</td>
+      <td>mariadb, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">Wordpress</th>
+      <td>LoadBalancer</td>
+      <td>5050</td>
+      <td>nginx, php-fpm7, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">phpmyadmin</th>
+      <td>LoadBalancer</td>
+      <td>5000</td>
+      <td>nginx, php-fpm7, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">InfluxDB</th>
+      <td>ClusterIP</td>
+      <td>8086</td>
+      <td>influxdb, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">Grafana</th>
+      <td>LoadBalancer</td>
+      <td>3000</td>
+      <td>grafana-server, telegraf</td>
+    </tr>
+    <tr>
+      <th scope="row">FTPS</th>
+      <td>ClusterIP</td>
+      <td>21, 21100</td>
+      <td>vsftpd, telegraf</td>
+    </tr>
+  </tbody>
+</table>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

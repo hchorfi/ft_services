@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grafana
+  labels:
+    app: grafana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grafana
+  template:
+    metadata:
+      labels:
+        app: grafana
+    spec:
+      containers:
+        - name: grafana
+          image: grafana
+          imagePullPolicy: Never
+          livenessProbe:
+            exec:
+              command:
+              - sh
+              - /check.sh
+            initialDelaySeconds: 10
+            periodSeconds: 5
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    metallb.universe.tf/allow-shared-ip: shared
+  name: grafana
+spec:
+  selector:
+    app: grafana
+  ports:
+  - name: pma
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
+  type: LoadBalancer  
